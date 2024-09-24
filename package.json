@@ -1,0 +1,18 @@
+{
+  "name": "matterport-workshop",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "vite": "^5.4.1"
+  },
+  "dependencies": {
+    "@matterport/webcomponent": "^0.1.39",
+    "three": "^0.151.3"
+  }
+}
