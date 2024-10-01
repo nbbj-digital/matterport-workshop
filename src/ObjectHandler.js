@@ -1,5 +1,5 @@
 import { Vector3 } from "three";
-import { PathFactory } from "./Path";
+import { PathFactory } from "./objects/Path";
 
 export class ObjectHandler {
   // Instance of our matterport sdk
@@ -21,7 +21,7 @@ export class ObjectHandler {
    * @param params - the custom properties for the custom object
    * @return {IComponent} - The node created
    */
-  async addObject(component, ...params) {
+  async addObject(component, params) {
     // Create an object in matterport and assign it to local variable
     const [ itemObject ] = await this._mpSdk.Scene.createObjects(1);
 
@@ -29,10 +29,12 @@ export class ObjectHandler {
     const node = itemObject.addNode();
 
     // Create component and add it to our node
-    node.addComponent(component, {...params});
+    node.addComponent(component, params);
 
     // Start running the node
     node.start();
+
+    console.log(node);
 
     return node;
   }
@@ -44,6 +46,6 @@ export class ObjectHandler {
    * @param {boolean} dashed - Whether the line is dashed or not
    */
   async addPath(pathPoints = [new Vector3(0,0,0)], dashed = false) {
-    await this.addObject('path', pathPoints, dashed);
+    await this.addObject('path', { pathPoints, dashed });
   }
 }
