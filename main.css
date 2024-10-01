@@ -1,0 +1,9 @@
+.action-bar {
+  height: 2rem;
+}
+
+.matterport-viewer-container {
+  position: relative;
+  /** 100 view height, minus the action bar height, minus additional 1rem for margin **/
+  height: calc(100vh - 2rem - 1rem);
+}

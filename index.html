@@ -5,9 +5,15 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Matterport Workshop</title>
+    <link rel="stylesheet" href="main.css">
   </head>
   <body>
-    <matterport-viewer m="sGYoH9sqwNm" application-key="[SDK_KEY]"></matterport-viewer>
+    <div class="action-bar">
+      <button id="btn-start-tour">Start Tour</button>
+    </div>
+    <div class="matterport-viewer-container">
+      <matterport-viewer m="sGYoH9sqwNm" application-key="[SDK_KEY]"></matterport-viewer>
+    </div>
     <script type="module" src="src/index.js"></script>
   </body>
 </html>
