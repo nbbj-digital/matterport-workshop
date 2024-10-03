@@ -6,6 +6,14 @@ import { Vector3 } from 'three';
 // List of Matterport sweep ids defining our tour path
 import tourPath from './assets/tourPath.json';
 
+// List of Matterport tag coordinates to place Mattertags
+import tagData from './assets/tagData.json'
+
+// List of position data to place text
+import textData from './assets/textData.json'
+// load text data
+const floorTagData = textData;
+
 const SWEEP_TRANSITION_TIME = 1000;
 const SWEEP_WAIT_TIME = 1000;
 
@@ -13,6 +21,7 @@ const SWEEP_WAIT_TIME = 1000;
 let currentSweepTourIndex = 0;
 let tourInProgress = false;
 let tourPaused = false;
+let sweepID
 
 // Our instance of the matterport sdk
 let _mpSdk;
@@ -54,16 +63,33 @@ const bindButtons = () => {
  * TODO: Implement
  * Subscribes to the current sweep observable
  */
-const subscribeToSweep = () => {
-
+function subscribeToSweep() {
+  _mpSdk.Sweep.current.subscribe((currentSweep) => {
+    console.log(currentSweep.id);
+    if (!sweepID) {
+      // TODO: Changed from .sid to .id. Ensure this doesn't cause any issues before deleting this comment
+      sweepID = currentSweep.id;
+    }
+  });
 }
 
 /**
  * TODO: Implement
  * Adds mattertags to our Matterport scene
  */
-const addMattertags = () => {
-
+function addMattertags() {
+  tagData.forEach((tag) => {
+    _mpSdk.Tag.add(tag).then(function(mattertagId) {
+      if (tag.mediaType) {
+        _mpSdk.Tag.editBillboard(mattertagId[0], {
+          media: {
+            type: tag.mediaType,
+            src: tag.mediaSrc,
+          },
+        });
+      }
+    });
+  });
 }
 
 /**
@@ -71,15 +97,55 @@ const addMattertags = () => {
  * Attaches click handler to log coordinates
  */
 const addMouseClickHandler = () => {
+  let currMouseIntersection = null;
 
+  _mpSdk.Pointer.intersection.subscribe(function(intersection) {
+    currMouseIntersection = intersection;
+  });
+
+  window.addEventListener('mousedown', (e) => {
+    // Right mouse click
+    if (e.button === 2 && currMouseIntersection) {
+      console.log({...currMouseIntersection.position});
+    }
+  });
 }
 
 /**
  * Adds our custom MeshLine path to the scene
+ * @param { array } points
+ * @param { boolean } stroke
  */
-const addPath = () => {
-  _objectHandler.addPath([new Vector3(5, 1.25, 0), new Vector3(-10, 1.25, 10)]);
+function addPath(pathData, dashed) {
+  const pathPoints = [];
+  // push anchortag data positions
+  pathData.forEach((pointData) => {
+    const { x, y, z } = pointData.anchorPosition;
+    pathPoints.push(new THREE.Vector3(x, y * 0.1, z));
+  });
+  _objectHandler.addPath(pathPoints, dashed);
 }
+
+/**
+ * Add text object to the scene
+ */
+function addTexts() {
+  addTextToScene('secondaryExit');
+}
+
+/**
+ * Create text object as a mesh
+ * @param { string } key - key from addText.json
+ */
+function addTextToScene(key) {
+  const floorTag = floorTagData[key];
+  _objectHandler.addText(floorTag.text, floorTag.position, () => {
+    _mpSdk.Sweep.moveTo(floorTag.sweepID, {
+      rotation: floorTag.rotation
+    });
+  });
+}
+
 
 // Resolves a promise after ms amount of time
 const wait = (ms) =>
@@ -140,7 +206,9 @@ async function init() {
 
   addMouseClickHandler();
 
-  addPath();
+  addPath(tagData, true);
+
+  addTexts();
 }
 
 // Run entry function
