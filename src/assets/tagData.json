@@ -1,0 +1,54 @@
+[
+  {
+    "label": "Primary 1",
+    "mediaType": "mattertag.media.photo",
+    "mediaSrc": "https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png",
+    "anchorPosition": { "x": -19.61, "y": 1, "z": 4.57 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Primary",
+    "anchorPosition": { "x": 0.5, "y": 1.41, "z": 1.96 },
+    "stemVector": { "x": -0.5, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": -3.42, "y": 1, "z": 7.40 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": -2.50, "y": 1, "z": 13.87 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": -0.37, "y": 1, "z": 15.00 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": 6.64, "y": 1, "z": 15.02 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": 9.12, "y": 1, "z": 14.01 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": 10.03, "y": 1, "z": 11.65 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": 4.26, "y": 1, "z": 5.71 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  },
+  {
+    "label": "Exit",
+    "anchorPosition": { "x": -3.42, "y": 1, "z": 7.40 },
+    "stemVector": { "x": 0.0, "y": 0.01, "z": 0.0 }
+  }
+]

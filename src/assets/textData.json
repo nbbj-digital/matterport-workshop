@@ -1,0 +1,14 @@
+{
+  "secondaryExit": {
+      "position": {
+          "x": 0.78, "y": 0.1, "z": 1.88 },
+      "sweepID": "493089f35f5f40649ee4f2b753431deb",
+      "text": "Go to Second EXIT",
+      "rotation": { "x": 0, "y": -90, "z": 0 }
+  },
+  "patientRoom": {
+      "position": {
+          "x": -4.050, "y": 0, "z": -0.902 },
+      "text": "Patient Room"
+  }
+}
