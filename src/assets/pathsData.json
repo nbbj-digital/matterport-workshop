@@ -1,0 +1,38 @@
+[
+  {
+    "path": [
+      {
+        "anchorPosition": { "x": 3.83, "y": 7.15, "z": 16.5 }
+      },
+      {
+        "anchorPosition": { "x": 13.26, "y": 7.15, "z": 16.5 }
+      },
+      {
+        "anchorPosition": { "x": 17.72, "y": 7.15, "z": 16.5 }
+      },
+      {
+        "anchorPosition": { "x": 17.72, "y": 7.15, "z": 8.78 }
+      },
+      {
+        "anchorPosition": { "x": 17.72, "y": 7.15, "z": 0.75 }
+      }
+    ],
+    "color": "#ff0000",
+    "dashed": true
+  },
+  {
+    "path": [
+      {
+        "anchorPosition": { "x": 45.75, "y": 7.23, "z": -2.17 }
+      },
+      {
+        "anchorPosition": { "x": 45.75, "y": 7.23, "z": 3.91 }
+      },
+      {
+        "anchorPosition": { "x": 18.99, "y": 7.23, "z": 0.05 }
+      }
+    ],
+    "color": "#00ff00",
+    "dashed": true
+  }
+]
