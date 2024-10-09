@@ -6,7 +6,7 @@ import { MeshBasicMaterial, Mesh } from 'three';
  * Implement a Text component and register it with the sdk.
  */
 function TextComponent() {
-  this.material = new MeshBasicMaterial({ color: '#D3D3D3', transparent: true, opacity: 0.5 });
+  this.material = new MeshBasicMaterial({ color: '#D3D3D3', transparent: true, opacity: 1 });
   this.componentType = 'path';
 
   this.inputs = {
@@ -43,6 +43,7 @@ function TextComponent() {
     mesh.position.set(this.inputs.position.x, this.inputs.position.y, this.inputs.position.z);
     mesh.rotation.y = Math.PI;
     mesh.rotation.x = Math.PI / 2;
+    mesh.rotation.z = Math.PI;
 
     this.outputs.objectRoot = mesh;
     this.outputs.collider = mesh; // raycasting ability
