@@ -8,7 +8,8 @@ function Path() {
   this.inputs = {
     // Array <Vector3>
     pathPoints: [],
-    dashed: false
+    dashed: false,
+    color: '#ffffff',
   };
 
   /**
@@ -22,7 +23,7 @@ function Path() {
 
     // create THREE material
     var material = new MeshLineMaterial( { 
-      color: 0xff0000, 
+      color: this.inputs.color, 
       lineWidth: 0.08,
       dashArray: this.inputs.dashed ? 0.01 : 0,
       dashRatio: this.inputs.dashed ? 0.5 : 0, 
