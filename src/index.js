@@ -4,24 +4,29 @@ import { ObjectHandler } from './ObjectHandler';
 import { Vector3 } from 'three';
 
 // List of Matterport sweep ids defining our tour path
-import tourPath from './assets/tourPath.json';
+import flythroughPath from './assets/flythroughPath.json';
 
 // List of Matterport tag coordinates to place Mattertags
-import tagData from './assets/tagData.json'
+import tagdata from './assets/tagdata.json'
+
+// List of points to create custom 3D path object
+import pathsData from './assets/pathsData.json'
 
 // List of position data to place text
 import textData from './assets/textData.json'
 // load text data
-const floorTagData = textData;
+const floorpathdata = textData;
 
-const SWEEP_TRANSITION_TIME = 1000;
-const SWEEP_WAIT_TIME = 1000;
+let sweepTransitionTime = 4000;
+let sweepWaitTime = 2000;
 
 // Defines the index of the current sweep we're visiting in the tour
 let currentSweepTourIndex = 0;
 let tourInProgress = false;
 let tourPaused = false;
-let sweepID
+let sweepID;
+
+let startTourButton;
 
 // Our instance of the matterport sdk
 let _mpSdk;
@@ -41,7 +46,7 @@ const initMatterport = async () => {
  * Sets up click handlers for our buttons
  */
 const bindButtons = () => {
-  const startTourButton = document.getElementById('btn-start-tour');
+  startTourButton = document.getElementById('btn-start-tour');
   if (!startTourButton) {
     throw Error('Cannot find tour button');
   }
@@ -55,6 +60,37 @@ const bindButtons = () => {
       tourPaused = false;
       startSweepTour();
       startTourButton.textContent = 'Pause Tour';
+    }
+  });
+
+  // Bind the "Go to Space" button
+  const goToSpaceButton = document.getElementById('btn-go-to-lobby');
+
+  goToSpaceButton.addEventListener('click', () => moveToSpace('LobbyRoom'))
+}
+
+/**
+ * Sets up event listeners for our inputs
+ */
+const bindTextInputs = () => {
+  const transitionTimeInput = document.getElementById('transition-time');
+  const waitTimeInput = document.getElementById('wait-time');
+
+  if (!transitionTimeInput || !waitTimeInput) {
+    throw Error('Cannot find inputs');
+  }
+
+  // Set the input listener for our transition time input
+  transitionTimeInput.addEventListener('input', (e) => {
+    if (e.target && e.target.valueAsNumber) {
+      sweepTransitionTime = e.target.valueAsNumber;
+    }
+  });
+
+  // Set the input listener for our sweep wait time input
+  waitTimeInput.addEventListener('input', (e) => {
+    if (e.target && e.target.valueAsNumber) {
+      sweepWaitTime = e.target.valueAsNumber;
     }
   });
 }
@@ -78,10 +114,11 @@ function subscribeToSweep() {
  * Adds mattertags to our Matterport scene
  */
 function addMattertags() {
-  tagData.forEach((tag) => {
+  tagdata.forEach((tag) => {
     _mpSdk.Tag.add(tag).then(function(mattertagId) {
       if (tag.mediaType) {
-        _mpSdk.Tag.editBillboard(mattertagId[0], {
+        console.log(tag, mattertagId);
+        _mpSdk.Mattertag.editBillboard(mattertagId[0], {
           media: {
             type: tag.mediaType,
             src: tag.mediaSrc,
@@ -113,24 +150,37 @@ const addMouseClickHandler = () => {
 
 /**
  * Adds our custom MeshLine path to the scene
- * @param { array } points
- * @param { boolean } stroke
+ * @param { Object } pathData
  */
-function addPath(pathData, dashed) {
+function addPath(pathData) {
   const pathPoints = [];
+  const { color, path, dashed } = pathData;
   // push anchortag data positions
-  pathData.forEach((pointData) => {
+  path.forEach((pointData) => {
     const { x, y, z } = pointData.anchorPosition;
-    pathPoints.push(new THREE.Vector3(x, y * 0.1, z));
+    pathPoints.push(new THREE.Vector3(x, y + 0.1, z));
   });
-  _objectHandler.addPath(pathPoints, dashed);
+  _objectHandler.addPath(pathPoints, dashed, color);
 }
 
 /**
  * Add text object to the scene
  */
 function addTexts() {
-  addTextToScene('secondaryExit');
+  addTextToScene('FitnessRoom');
+  addTextToScene('CafeRoom');
+  addTextToScene('LobbyRoom');
+}
+
+function moveToSpace(spaceName) {
+  if (!textData[spaceName]) {
+    throw Error('Cannot move to space: Space does not exist');
+  }
+
+  const { sweepID, rotation } = textData[spaceName];
+  _mpSdk.Sweep.moveTo(sweepID, {
+    rotation
+  });
 }
 
 /**
@@ -138,7 +188,7 @@ function addTexts() {
  * @param { string } key - key from addText.json
  */
 function addTextToScene(key) {
-  const floorTag = floorTagData[key];
+  const floorTag = floorpathdata[key];
   _objectHandler.addText(floorTag.text, floorTag.position, () => {
     _mpSdk.Sweep.moveTo(floorTag.sweepID, {
       rotation: floorTag.rotation
@@ -156,7 +206,7 @@ const wait = (ms) =>
 )
 
 /**
- * Starts the tour, navigating to each sweep in our tourPath list
+ * Starts the tour, navigating to each sweep in our flythroughPath list
  */
 const startSweepTour = async () => {
   // Reset our tour back to the start if our current index is at the end of the tour
@@ -170,27 +220,28 @@ const startSweepTour = async () => {
   tourInProgress = true;
 
   // Loop through each sweep in the tour, starting at startIndex
-  for (let i = startIndex; i < tourPath.length && !tourPaused; i++) {
+  for (let i = startIndex; i < flythroughPath.length && !tourPaused; i++) {
     currentSweepTourIndex = i;
   
     // Get the data from current path entry
-    const { id, rotation } = tourPath[i];
+    const { id, rotation } = flythroughPath[i];
 
     // Tell matterport to move to the current sweep in our tour
     await _mpSdk.Sweep.moveTo(id, {
       rotation,
       transition: _mpSdk.Sweep.Transition.FLY,
-      transitionTime: SWEEP_TRANSITION_TIME
+      transitionTime: sweepTransitionTime
     });
 
     // Wait SLEEP_WAIT_TIME ms before continuing to next sweep
-    await wait(SWEEP_WAIT_TIME);
+    await wait(sweepWaitTime);
   }
 
   tourInProgress = false;
+  startTourButton.textContent = 'Start Tour';
 }
 
-const isLastSweepInTour = () => currentSweepTourIndex === tourPath.length - 1;
+const isLastSweepInTour = () => currentSweepTourIndex === flythroughPath.length - 1;
 
 /**
  * Entry point into the application, initializes the application
@@ -200,13 +251,17 @@ async function init() {
 
   bindButtons();
 
+  bindTextInputs();
+
   subscribeToSweep();
 
   addMattertags();
 
   addMouseClickHandler();
 
-  addPath(tagData, true);
+  pathsData.forEach((pathData) => {
+    addPath(pathData);
+  });
 
   addTexts();
 }

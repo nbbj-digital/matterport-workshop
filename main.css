@@ -1,5 +1,9 @@
 .action-bar {
   height: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
 }
 
 .matterport-viewer-container {
