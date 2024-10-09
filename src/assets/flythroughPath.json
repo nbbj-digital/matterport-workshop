@@ -1,0 +1,82 @@
+[
+	{
+			"id": "0994c3ff296549d49afb542f10d37a4a",
+			"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+			}
+	},
+	{
+			"id": "41c15c29acbf498daba8383b709e6ab0",
+			"rotation": {
+					"x": 0,
+					"y": -45,
+					"z": 0
+			}
+	},
+	{
+			"id": "d2a0d7d3c60c412f87044d80ff87112d",
+			"rotation": {
+					"x": 0,
+					"y": -90,
+					"z": 0
+			}
+	},
+	{
+			"id": "9fcf71d89d5c43b39f3c17c6091f318b",
+			"rotation": {
+					"x": 0,
+					"y": -135,
+					"z": 0
+			}
+	},
+	{
+			"id": "d46be75d71da4ffe885e2651ef5f537d",
+			"rotation": {
+					"x": 0,
+					"y": 180,
+					"z": 0
+			}
+	},
+	{
+			"id": "beedf95d4db54be9953acf2c40859e8a",
+			"rotation": {
+					"x": 0,
+					"y": -135,
+					"z": 0
+			}
+	},
+	{
+			"id": "58742573a6dc4878830d0f72ba755794",
+			"rotation": {
+					"x": 0,
+					"y": 90,
+					"z": 0
+			}
+	},
+	{
+			"id": "bd18dfa72add4aed8f5426a5e53f9bd1",
+			"rotation": {
+					"x": 0,
+					"y": -90,
+					"z": 0
+			}
+	},
+	{
+			"id": "fb132fd82a7846d0b4d036fe090b9902",
+			"rotation": {
+					"x": 0,
+					"y": -90,
+					"z": 0
+			}
+	},
+	{
+			"id": "7e18a95d7fed448fbf89575e650a84e7",
+			"rotation": {
+					"x": 0,
+					"y": 0,
+					"z": 0
+			}
+	}
+]
