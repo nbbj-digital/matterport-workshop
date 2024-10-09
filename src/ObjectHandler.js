@@ -44,8 +44,8 @@ export class ObjectHandler {
    * @param {Vector3[]} pathPoints - A list of coordinates that make up the path
    * @param {boolean} dashed - Whether the line is dashed or not
    */
-  async addPath(pathPoints = [new Vector3(0,0,0)], dashed = false) {
-    await this.addObject('path', { pathPoints, dashed });
+  async addPath(pathPoints = [new Vector3(0,0,0)], dashed = false, color = '#ffffff') {
+    await this.addObject('path', { pathPoints, dashed, color });
   }
 
   /**
