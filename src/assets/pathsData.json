@@ -26,13 +26,19 @@
         "anchorPosition": { "x": 45.75, "y": 7.23, "z": -2.17 }
       },
       {
-        "anchorPosition": { "x": 45.75, "y": 7.23, "z": 3.91 }
+        "anchorPosition": { "x": 45.75, "y": 7.23, "z": 4.0 }
       },
       {
-        "anchorPosition": { "x": 18.99, "y": 7.23, "z": 0.05 }
+        "anchorPosition": { "x": 38.33, "y": 7.23, "z": 4.0 }
+      },
+      {
+        "anchorPosition": { "x": 36.50, "y": 7.23, "z": 0.75 }
+      },
+      {
+        "anchorPosition": { "x": 17.72, "y": 7.23, "z": 0.75 }
       }
     ],
-    "color": "#00ff00",
-    "dashed": true
+    "color": "#0000ff",
+    "dashed": false
   }
 ]

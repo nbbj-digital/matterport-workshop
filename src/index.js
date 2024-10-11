@@ -123,6 +123,7 @@ function addMattertags() {
             type: tag.mediaType,
             src: tag.mediaSrc,
           },
+          description:tag.description
         });
       }
     });

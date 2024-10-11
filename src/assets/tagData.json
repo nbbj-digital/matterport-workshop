@@ -1,23 +1,24 @@
 [
   {
     "label": "Follow path to go to Lobby",
-    "mediaType": "mattertag.media.photo",
-    "mediaSrc": "https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png",
     "anchorPosition": { "x": 3.83, "y": 7.15, "z": 16.5 },
     "stemVector": { "x": 0.0, "y": 1, "z": 0.0 },
     "color": {"r":255, "g":0, "b":0 }
   },
   {
-    "label": "Reading Room",
+    "label": "Reading Room Inspiration",
     "anchorPosition": { "x": 45.75, "y": 7.23, "z": -2.24 },
     "stemVector": { "x": 0.0, "y": 1, "z": 0.0 },
+    "mediaType": "mattertag.media.video",
+    "mediaSrc": "https://www.youtube.com/watch?v=zLsERDHFdLA&ab_channel=NBBJDesign",
     "color": {"r":0, "g":0, "b":255 }
   },
   {
-    "label": "Wood Finish",
+    "label": "Wide Plank Hickory 7",
     "anchorPosition": { "x": 16.07, "y": 8.53, "z": -2.61 },
+    "description":"[Link to Product site!](https://www.terramai.com/products/wide-plank-hickory-flooring-paneling-arctic-fox#gsc.tab=0)",
     "mediaType": "mattertag.media.photo",
-    "mediaSrc": "https://static.matterport.com/mp_cms/media/filer_public/71/ca/71cabc75-99a5-41a4-917c-f45203f9254e/pro-21f8ddbae.png",
+    "mediaSrc": "https://www.terramai.com/images/products/wp-hickory-arctic-fox-v2-o-635.jpg",
     "stemVector": { "x": 0.5, "y": 0, "z": 0 },
     "color": {"r":0, "g":255, "b":0 }
   }
