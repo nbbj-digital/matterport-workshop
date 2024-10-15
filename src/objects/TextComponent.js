@@ -6,14 +6,17 @@ import { MeshBasicMaterial, Mesh } from 'three';
  * Implement a Text component and register it with the sdk.
  */
 function TextComponent() {
-  this.material = new MeshBasicMaterial({ color: '#D3D3D3', transparent: true, opacity: 1 });
   this.componentType = 'path';
 
   this.inputs = {
     position: { x: 0, y: 0, z: 0 },
     text: 'test',
     hovered: false,
+    baseColor: '#ffffff',
+    hoverColor: '#000000',
   };
+
+  this.material = new MeshBasicMaterial({ color: this.inputs.baseColor, transparent: true, opacity: 1 });
 
   this.context = null; // or assign a proper context
 
@@ -67,9 +70,14 @@ function TextComponent() {
     this.inputs.hovered = !this.inputs.hovered;
 
     if (this.inputs.hovered) {
-      this.material.color.setHex(0x00ff00);
+      let color = this.inputs.hoverColor;
+      color = color.substring(1);
+      console.log('hover is ', color);
+      this.material.color.setHex(parseInt(color, 16));
     } else {
-      this.material.color.setHex(0xffffff);
+      let color = this.inputs.baseColor;
+      color = color.substring(1);
+      this.material.color.setHex(parseInt(color, 16));
     }
   }
 }

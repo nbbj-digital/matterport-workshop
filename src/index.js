@@ -190,11 +190,14 @@ function moveToSpace(spaceName) {
  */
 function addTextToScene(key) {
   const floorTag = floorpathdata[key];
+  const baseColor = floorTag.colors?.base;
+  const hoverColor = floorTag.colors?.hover;
+
   _objectHandler.addText(floorTag.text, floorTag.position, () => {
     _mpSdk.Sweep.moveTo(floorTag.sweepID, {
       rotation: floorTag.rotation
     });
-  });
+  }, baseColor, hoverColor);
 }
 
 

@@ -54,8 +54,8 @@ export class ObjectHandler {
  * @param { Object } position 
  * @param { function } callback 
  */
-  async addText(text = '', position = { x: 0, y: 0, z: 0 }, callback) {
-    const textComponent = await this.addObject('text', { text, position });
+  async addText(text = '', position = { x: 0, y: 0, z: 0 }, callback, baseColor = '#ffffff', hoverColor = '#000000') {
+    const textComponent = await this.addObject('text', { text, position, baseColor, hoverColor });
 
     const clickSpy = new ClickSpy(textComponent, callback);
     const hoverSpy = new HoverSpy(textComponent);

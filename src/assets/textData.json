@@ -4,14 +4,22 @@
             "x": 17.21, "y": 7.19, "z": -0.91 },
         "text": "Go to Fitness Room",
         "sweepID": "753e6982712f497abed0b5027ab62f44",
-        "rotation": { "x": 0, "y": 135, "z": 0 }
+        "rotation": { "x": 0, "y": 135, "z": 0 },
+        "colors": {
+            "base": "#ffffff",
+            "hover": "#ff0000"
+        }
   },
   "CafeRoom": {
         "position": {
             "x": 17.21, "y": 7.19, "z": -0.6 },
         "text": "Go to Cafe",
         "sweepID": "79247c7c41b74f25a41c0d95e229a7c2",
-        "rotation": { "x": 0, "y": 0, "z": 0 }
+        "rotation": { "x": 0, "y": 0, "z": 0 },
+        "colors": {
+            "base": "#ffffff",
+            "hover": "#ff0000"
+        }
   },
   "LobbyRoom": {
         "position": {
