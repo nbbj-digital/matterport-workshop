@@ -94,8 +94,11 @@ Ensure the following software is installed on your machine:
 
 1. **Open Terminal in VSCode**  
    Navigate to **Terminal** -> **New Terminal** to open a terminal at the folder location.
+2. Ensure you are at the folderpath where you have cloned the repository
 
-2. **Navigate to the `index.html` file**  
+![image](https://github.com/user-attachments/assets/3c17e01e-b02a-4a3b-86a6-6a8eaa9ba0a1)
+
+3. **Navigate to the `index.html` file**  
    On **line 26**, replace the placeholder `"sdk-key"` with your generated SDK key.
    
 ![image](https://github.com/user-attachments/assets/2f585a17-9e45-4fb1-846a-539c47f9df54)
@@ -108,7 +111,7 @@ Ensure the following software is installed on your machine:
    ```bash
    npx matterport-assets static
    ```
-   - You should see the version number of Node.js.
+   - You should see a 'static' folder is created.
      
    ```bash
    npm run dev
