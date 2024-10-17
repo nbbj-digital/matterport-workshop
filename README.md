@@ -14,8 +14,6 @@ Ensure the following software is installed on your machine:
 - **Git**  
   [Download Link](https://git-scm.com/downloads/win)
 
----
-
 ## Check Installation Status
 
 1. **Open Command Prompt** on Windows.
@@ -58,15 +56,10 @@ Ensure the following software is installed on your machine:
    ```bash
    code .
    ```
-  - A new terminal instance will open at that location.
 
 ---
 
 # Setting up Matterport SDK Key
-
-## Prerequisites
-- Ensure you have a Matterport account.
-- Install Node.js and npm.
 
 ## Steps to Set Up Matterport SDK Key
 
