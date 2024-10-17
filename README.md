@@ -68,20 +68,25 @@ Ensure the following software is installed on your machine:
    
 2. **Log in to Matterport**  
    After logging in, navigate to **Settings** -> **Developer Settings**.
+  ![image](https://github.com/user-attachments/assets/b029b8d2-fa84-4871-9b28-4d110fc38570)
    
-3. **SDK Key Management**  
+4. **SDK Key Management**  
    Scroll down to the **SDK Key Management** section.
 
-4. **Add a new SDK Key**  
+5. **Add a new SDK Key**  
    Click the **+ Add an SDK Key** button.
 
-5. **Name your SDK Key**  
+6. **Name your SDK Key**  
    Use the name `localhost` for local development.
 
-6. **Generate the SDK Key**  
+7. **Generate the SDK Key**  
    Once named, generate the key and keep it handy for the next steps.
-
+![image](https://github.com/user-attachments/assets/b029b8d2-fa84-4871-9b28-4d110fc38570)
 ---
+8. **Add port name**
+   Once SDK key is generated, Click 'Edit' and add 5173 Port. Click Update
+![image](https://github.com/user-attachments/assets/9eedc8ee-20f8-43e4-9aae-41bb25dcdf2b)
+   
 
 # Setting up the Project
 
@@ -90,6 +95,7 @@ Ensure the following software is installed on your machine:
 
 2. **Navigate to the `index.html` file**  
    On **line 26**, replace the placeholder `"sdk-key"` with your generated SDK key.
+![image](https://github.com/user-attachments/assets/2f585a17-9e45-4fb1-846a-539c47f9df54)
 
 3. **Install dependencies**  
    Run the following command to install all necessary packages:
@@ -99,16 +105,19 @@ Ensure the following software is installed on your machine:
    ```bash
    npx matterport-assets static
    ```
+   - You should see the version number of Node.js.
+     
    ```bash
    npm run dev
    ```
 4. **Launch the app**  
    Ctrl-click on the link "http://localhost:5173/" in the terminal to launch the app
+   ![image](https://github.com/user-attachments/assets/817f5cc3-6257-455d-83d8-b8948e4e0671)
 
-5. **Go to the lobby**  
+6. **Go to the lobby**  
    Once the app loads, click on the **“Go to lobby”** button located at the top of the page.
 
-6. **Verify the app functionality**  
+7. **Verify the app functionality**  
    If the view switches, your app is working correctly!
 
 
