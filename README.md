@@ -10,7 +10,7 @@ ___
 5. [Setting up the Project](#project-setup)
 ___
 
-## Software and Package Requirements
+## Software Requirements
 
 Ensure the following software is installed on your machine:
 
@@ -23,7 +23,7 @@ Ensure the following software is installed on your machine:
 - **Git**  
   [Download Link](https://git-scm.com/downloads/win)
 
-## Check Installation Status
+## Installation Status
 
 1. **Open Command Prompt** on Windows.
 2. Run the following commands:
@@ -47,7 +47,7 @@ Ensure the following software is installed on your machine:
 
 ---
 
-## Cloning the Repository
+## Repository Clone
 
 1. Navigate to the folder in your directory where you want to clone the project. Ensure there are no folder restrictions.
 2. In the folder's path bar, type `cmd` and press Enter.
@@ -68,7 +68,7 @@ Ensure the following software is installed on your machine:
 
 ---
 
-## Setting up Matterport SDK Key
+## Matterport SDK Key
 
 ## Steps to Set Up Matterport SDK Key
 
@@ -98,7 +98,7 @@ Ensure the following software is installed on your machine:
 ![image](https://github.com/user-attachments/assets/9eedc8ee-20f8-43e4-9aae-41bb25dcdf2b)
    
 
-## Setting up the Project
+## Project Setup
 
 1. **Open Terminal in VSCode**  
    Navigate to **Terminal** -> **New Terminal** to open a terminal at the folder location.
