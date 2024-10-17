@@ -3,10 +3,11 @@ ___
 
 ## Table of Contents
 
-1. [Software and Package Requirements](#Software-Requirements)
-2. [Installation](#installation)
-3. [Running the App](#running-the-app)
-4. [Testing](#testing)
+1. [Software and Package Requirements](#software-requirements)
+2. [Check Installation Status](#installation-status)
+3. [Cloning the Repository](#repository-clone)
+4. [Setting up Matterport SDK Key](#matterport-sdk-key)
+5. [Setting up the Project](#project-setup)
 ___
 
 ## Software and Package Requirements
@@ -67,7 +68,7 @@ Ensure the following software is installed on your machine:
 
 ---
 
-# Setting up Matterport SDK Key
+## Setting up Matterport SDK Key
 
 ## Steps to Set Up Matterport SDK Key
 
@@ -97,7 +98,7 @@ Ensure the following software is installed on your machine:
 ![image](https://github.com/user-attachments/assets/9eedc8ee-20f8-43e4-9aae-41bb25dcdf2b)
    
 
-# Setting up the Project
+## Setting up the Project
 
 1. **Open Terminal in VSCode**  
    Navigate to **Terminal** -> **New Terminal** to open a terminal at the folder location.
