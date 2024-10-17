@@ -1,6 +1,14 @@
 # Matterport Workshop Project
 ___
 
+## Table of Contents
+
+1. [Software and Package Requirements](#Software-Requirements)
+2. [Installation](#installation)
+3. [Running the App](#running-the-app)
+4. [Testing](#testing)
+___
+
 ## Software and Package Requirements
 
 Ensure the following software is installed on your machine:
