@@ -92,7 +92,7 @@ Ensure the following software is installed on your machine:
 7. **Generate the SDK Key**  
    Once named, generate the key and keep it handy for the next steps.
 
-8. **Add port name**
+8. **Add port name** <br>
    Once SDK key is generated, Click 'Edit' and add 5173 Port. Click Update
    
 ![image](https://github.com/user-attachments/assets/9eedc8ee-20f8-43e4-9aae-41bb25dcdf2b)
