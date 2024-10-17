@@ -15,7 +15,7 @@ ___
 Ensure the following software is installed on your machine:
 
 - **Visual Studio Code**  
-  [Download Link](https://code.visualstudio.com/download)
+  <a href="https://code.visualstudio.com/download" target="_blank">Download Link</a>
 
 - **Node.js** (Any version should work)  
   [Download Link](https://nodejs.org/en/download/prebuilt-installer)
@@ -125,7 +125,7 @@ Ensure the following software is installed on your machine:
    npm run dev
    ```
 5. **Launch the app**  
-   Ctrl-click on the link "http://localhost:5173/" in the terminal to launch the app
+   Ctrl-click on the link http://localhost:5173/ in the terminal to launch the app
    
    ![image](https://github.com/user-attachments/assets/817f5cc3-6257-455d-83d8-b8948e4e0671)
 
