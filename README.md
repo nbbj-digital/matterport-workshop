@@ -43,7 +43,10 @@ Ensure the following software is installed on your machine:
      ```
      - You should see the version number of Git.
 
-   If all three commands return version numbers, your installations were successful.
+   If all three commands return version numbers, your installations were successful. Outputs should look similar to below:
+   
+   ![image](https://github.com/user-attachments/assets/780410af-7cff-4a15-8d6c-30ef5739e7eb)
+
 
 ---
 
