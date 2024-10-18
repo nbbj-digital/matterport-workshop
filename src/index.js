@@ -14,7 +14,6 @@ import pathsData from './assets/pathsData.json'
 
 // List of position data to place text
 import textData from './assets/textData.json'
-// load text data
 const floorpathdata = textData;
 
 let sweepTransitionTime = 4000;
@@ -96,7 +95,6 @@ const bindTextInputs = () => {
 }
 
 /**
- * TODO: Implement
  * Subscribes to the current sweep observable
  */
 function subscribeToSweep() {
@@ -110,7 +108,6 @@ function subscribeToSweep() {
 }
 
 /**
- * TODO: Implement
  * Adds mattertags to our Matterport scene
  */
 function addMattertags() {
@@ -131,7 +128,6 @@ function addMattertags() {
 }
 
 /**
- * TODO: Implement
  * Attaches click handler to log coordinates
  */
 const addMouseClickHandler = () => {
