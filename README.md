@@ -117,7 +117,7 @@ Ensure the following software is installed on your machine:
    
 ![image](https://github.com/user-attachments/assets/2f585a17-9e45-4fb1-846a-539c47f9df54)
 
-4. **Install dependencies**  
+4. **Install dependencies**   
    Run the following command to install all necessary packages:
    ```bash
    npm install
