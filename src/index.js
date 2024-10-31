@@ -42,6 +42,10 @@ const initMatterport = async () => {
   _objectHandler = new ObjectHandler(_mpSdk);
 }
 
+/**
+ * Adds the matterport key to the matterport viewer
+ * @param {MatterportViewer} viewer 
+ */
 const injectMatterportKey = (viewer) => {
   console.log(import.meta.env.VITE_MATTERPORT_KEY);
   viewer.setAttribute('application-key', import.meta.env.VITE_MATTERPORT_KEY);
