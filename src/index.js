@@ -37,8 +37,14 @@ let _objectHandler;
  */
 const initMatterport = async () => {
   const viewer = document.querySelector('matterport-viewer');
+  injectMatterportKey(viewer);
   _mpSdk = await viewer.playingPromise;
   _objectHandler = new ObjectHandler(_mpSdk);
+}
+
+const injectMatterportKey = (viewer) => {
+  console.log(import.meta.env.VITE_MATTERPORT_KEY);
+  viewer.setAttribute('application-key', import.meta.env.VITE_MATTERPORT_KEY);
 }
 
 /**
