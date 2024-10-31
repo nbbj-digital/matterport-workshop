@@ -14,6 +14,7 @@ jobs:
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
+      - run: npm install @matterport/webcomponent
       - run: npx matterport-assets static
       - name: Deploy to Vercel Action
         uses: BetaHuhn/deploy-to-vercel-action@v1
