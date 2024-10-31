@@ -7,7 +7,7 @@ import { Vector3 } from 'three';
 import flythroughPath from './assets/flythroughPath.json';
 
 // List of Matterport tag coordinates to place Mattertags
-import tagdata from './assets/tagdata.json'
+import tagdata from './assets/tagData.json'
 
 // List of points to create custom 3D path object
 import pathsData from './assets/pathsData.json'
